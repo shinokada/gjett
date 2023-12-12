@@ -31,8 +31,8 @@
 </script>
 
 <main class="m-8">
-  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Explain and Guess Norwegian Word</h1>
-	<p class="mb-6 text-xl font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Play this game with your friends or team to learn Norwegian.</p>
+  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Norwegian Word Challenge</h1>
+	<p class="mb-6 text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-400">Explore Norwegian together with friends through interactive gameplay, making learning enjoyable and collaborative.</p>
 	<h2 class="text-4xl font-bold dark:text-white">How to play</h2>
 	<ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 my-4">
 		<li>Click "Change Level" to select your difficulty.</li>
@@ -53,8 +53,8 @@
 	</p>
 
 	<h2 class="text-4xl font-bold dark:text-white">Help</h2>
-	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Ordbøkene: {randomElement}</button>
+	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Open Ordbøkene: {randomElement}</button>
 	</p>
-	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'google')}>English translation: {randomElement}</button>
+	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'google')}>Open Google translation: {randomElement}</button>
 	</p>
 </main>
