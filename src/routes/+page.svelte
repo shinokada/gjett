@@ -48,13 +48,15 @@
 	<button on:click={randomword} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
 		{startButton}
 	</button>
+
+	{#if randomElement}
 	<p class="my-4 text-2xl text-green-500">
 		Norwegian word: {randomElement}
 	</p>
-
 	<h2 class="text-4xl font-bold dark:text-white">Help</h2>
 	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Open Ordbøkene: {randomElement}</button>
 	</p>
 	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'google')}>Open Google translation: {randomElement}</button>
 	</p>
+	{/if}
 </main>
