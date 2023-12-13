@@ -30,33 +30,53 @@
 	}
 </script>
 
-<main class="m-8">
-  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Norwegian Word Challenge</h1>
-	<p class="mb-6 text-xl font-normal text-gray-500 lg:text-2xl dark:text-gray-400">Explore Norwegian together with friends through interactive gameplay, making learning enjoyable and collaborative.</p>
-	<h2 class="text-4xl font-bold dark:text-white">How to play</h2>
-	<ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 my-4">
-		<li>Click "Change Level" to select your difficulty.</li>
-    <li>Player 1 clicks "Start" or continues clicking to find a Norwegian word to explain.</li>
-    <li>Player 2 guesses the word or asks questions in Norwegian until guessing correctly.</li>
-    <li>Take turns.</li>
-	</ul>
+<section class="bg-white dark:bg-gray-900">
+	<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+		<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Gjett Norsk</h1>
+		<p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends through interactive app, making learning enjoyable and collaborative.</p>
+		<h2 class="text-left text-3xl font-bold dark:text-white">How to play</h2>
+		<ul class="text-left space-y-1 mb-4 text-gray-500 list-inside dark:text-gray-400">
+			<li class="flex items-center">
+				<svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+			 </svg> Click "Change Level" to select your difficulty.</li>
+			<li class="flex items-center">
+				<svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+			 </svg> Player 1 clicks "Start" or continues clicking to find a Norwegian word to explain.</li>
+			<li class="flex items-center">
+				<svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+			 </svg> Player 2 guesses the word or asks questions in Norwegian until guessing correctly.</li>
+			<li class="flex items-center">
+				<svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+			 </svg> Take turns.</li>
+		</ul>
+		<div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+			<button on:click={toggleLevel} class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+				Change level: {currentLevel}
+			</button>
 
-	<button on:click={toggleLevel} class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 focus:outline-none dark:focus:ring-yellow-800">
-		Change level: {currentLevel}
-	</button>
-	
-	<button on:click={randomword} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-		{startButton}
-	</button>
-
-	{#if randomElement}
-	<p class="my-4 text-2xl text-green-500">
-		Norwegian word: {randomElement}
-	</p>
-	<h2 class="text-4xl font-bold dark:text-white">Help</h2>
-	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Open Ordbøkene: {randomElement}</button>
-	</p>
-	<p class="my-4 text-2xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'google')}>Open Google translation: {randomElement}</button>
-	</p>
-	{/if}
-</main>
+			<button on:click={randomword} class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+				{startButton}
+			</button>
+		</div>
+		{#if randomElement}
+		<p class="my-4 text-4xl text-green-500">
+			{randomElement}
+		</p>
+		<h2 class="text-2xl text-left my-4 font-bold dark:text-white">Need help?</h2>
+		<div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+			<div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+			<p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Open Ordbøkene: {randomElement}</button>
+			</p>
+			</div>
+			<div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+			<p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'google')}>Open Google translation: {randomElement}</button>
+			</p>
+			</div>
+		</div>
+		{/if}
+	</div>
+</section>
