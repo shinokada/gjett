@@ -34,8 +34,8 @@
 		const screenHeight = window.screen.height;
 		if ( screenWidth < 400 && screenHeight < 650 && scrollY < 80 ) {
 			window.scrollBy(0, 200); 
-		} else if( screenWidth < 300 && screenHeight < 650 && scrollY < 200 ){
-			window.scrollBy(0, 200);
+		} else if( screenWidth < 300 && screenHeight < 650 && scrollY < 300 ){
+			window.scrollBy(0, 300);
 		}
 		return randomElement;
 	}
