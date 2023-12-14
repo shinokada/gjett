@@ -29,12 +29,12 @@
 	function randomword (){
 		let selectedList = currentLevel === 'A' ? awords : bwords;
 		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
-		const scrollY = window.scrollY || window.pageYOffset;
-		const scrollX = window.scrollX || window.pageXOffset; // Get the current scroll position
+		const scrollY = window.scrollY || window.pageYOffset; // Get the current scroll position
+		const screenWidth = window.screen.width; 
 		const screenHeight = window.screen.height;
-		if ( scrollX < 400 && screenHeight < 650 && scrollY < 80) {
-			window.scrollBy(0, 200); // Scroll the window down by 400px
-		} else if(scrollX < 300 && screenHeight < 650 && scrollY < 200){
+		if ( screenWidth < 400 && screenHeight < 650 && scrollY < 80 ) {
+			window.scrollBy(0, 200); 
+		} else if( screenWidth < 300 && screenHeight < 650 && scrollY < 200 ){
 			window.scrollBy(0, 200);
 		}
 		return randomElement;
