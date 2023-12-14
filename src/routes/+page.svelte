@@ -29,9 +29,10 @@
 	function randomword (){
 		let selectedList = currentLevel === 'A' ? awords : bwords;
 		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
-		const scrollY = window.scrollY || window.pageYOffset; // Get the current scroll position
-		if (scrollY < 170) {
-			window.scrollBy(0, 170); // Scroll the window down by 400px
+		const scrollY = window.scrollY || window.pageYOffset;
+		const scrollX = window.scrollX || window.pageXOffset; // Get the current scroll position
+		if ( scrollX < 400 && scrollY < 300) {
+			window.scrollBy(0, 200); // Scroll the window down by 400px
 		}
 		return randomElement;
 	}
@@ -39,7 +40,7 @@
 
 <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
 	<div class="pt-8 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
-		<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><No size={40} class="mr-2 display: inline"/> Gjett Norsk <No size={40} class="ml-2 display: inline"/></h1>
+		<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><No size={40} class="mr-2 display: inline"/> Gjett Norsk</h1>
 		<p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends through interactive app, making learning enjoyable and collaborative.</p>
 		<h2 class="text-center sm:text-left text-3xl font-bold mb-4 dark:text-white">How to play</h2>
 		<ul class="text-left space-y-1 mb-4 text-gray-500 list-inside dark:text-gray-400">
