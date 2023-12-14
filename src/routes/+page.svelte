@@ -1,4 +1,5 @@
 <script>
+	import {No} from '$lib'
 	import awordList from '$lib/awords.json';
 	import bwordList from '$lib/bwords.json';
 
@@ -28,13 +29,17 @@
 	function randomword (){
 		let selectedList = currentLevel === 'A' ? awords : bwords;
 		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
+		const scrollY = window.scrollY || window.pageYOffset; // Get the current scroll position
+		if (scrollY < 170) {
+			window.scrollBy(0, 170); // Scroll the window down by 400px
+		}
 		return randomElement;
 	}
 </script>
 
 <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
 	<div class="pt-8 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
-		<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Gjett Norsk</h1>
+		<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><No size={40} class="mr-2 display: inline"/> Gjett Norsk <No size={40} class="ml-2 display: inline"/></h1>
 		<p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends through interactive app, making learning enjoyable and collaborative.</p>
 		<h2 class="text-center sm:text-left text-3xl font-bold mb-4 dark:text-white">How to play</h2>
 		<ul class="text-left space-y-1 mb-4 text-gray-500 list-inside dark:text-gray-400">
@@ -55,7 +60,7 @@
 					<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
 			 </svg> Take turns.</li>
 		</ul>
-		<div class="flex flex-col m-16 lg:mb-8 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+		<div class="flex flex-col m-4 lg:mb-8 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
 			<button on:click={toggleLevel} class="inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
 				Change level: {currentLevel}
 			</button>
@@ -65,7 +70,7 @@
 			</button>
 		</div>
 		{#if randomElement}
-		<p class="block py-24 text-4xl max-w-lg mx-auto text-green-500 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+		<p class="block py-12 text-4xl max-w-lg mx-auto text-green-500 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 			{randomElement}
 		</p>
 		<h2 class="text-2xl text-left my-4 font-bold dark:text-white">Need help?</h2>
