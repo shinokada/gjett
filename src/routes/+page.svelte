@@ -1,9 +1,11 @@
 <script>
-	import {lista} from './wordlist-a'
-	import {listb} from './wordlist-b'
+	import awordList from '$lib/awords.json';
+	import bwordList from '$lib/bwords.json';
 
+	const awords = awordList.awords
+	const bwords = bwordList.bwords
 	let randomElement = $state()
-  let currentLevel = $state('A')
+	let currentLevel = $state('A')
 	let startButton = $derived(randomElement ? 'Next' : 'Start')
 
 	function openTab(word, website) {
@@ -24,14 +26,14 @@
 	}
 
 	function randomword (){
-		let selectedList = currentLevel === 'A' ? lista : listb;
+		let selectedList = currentLevel === 'A' ? awords : bwords;
 		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
 		return randomElement;
 	}
 </script>
 
 <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
-	<div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+	<div class="pt-8 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
 		<h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Gjett Norsk</h1>
 		<p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends through interactive app, making learning enjoyable and collaborative.</p>
 		<h2 class="text-center sm:text-left text-3xl font-bold mb-4 dark:text-white">How to play</h2>
@@ -63,7 +65,7 @@
 			</button>
 		</div>
 		{#if randomElement}
-		<p class="block p-6 text-4xl text-green-500 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+		<p class="block py-24 text-4xl max-w-lg mx-auto text-green-500 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 			{randomElement}
 		</p>
 		<h2 class="text-2xl text-left my-4 font-bold dark:text-white">Need help?</h2>
