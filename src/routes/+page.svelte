@@ -31,7 +31,7 @@
 		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
 		const scrollY = window.scrollY || window.pageYOffset;
 		const scrollX = window.scrollX || window.pageXOffset; // Get the current scroll position
-		if ( scrollX < 400 && scrollY < 300) {
+		if ( scrollX < 400 && scrollY < 200) {
 			window.scrollBy(0, 200); // Scroll the window down by 400px
 		}
 		return randomElement;
