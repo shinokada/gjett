@@ -102,7 +102,7 @@
 			</div>
 		</div>
 	</footer>
-	<div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
+	<div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-4/5 absolute top-0 left-0 z-0"></div>
 </section>
 
 
