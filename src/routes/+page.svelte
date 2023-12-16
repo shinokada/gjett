@@ -33,12 +33,6 @@
 	function randomword (){
 		let selectedList = currentLevel === 'A' ? awords : bwords;
 		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
-		const scrollY = window.scrollY || window.pageYOffset;
-		if ( (innerWidth < 500 || innerHeight < 500) && scrollY < 80 ) {
-			window.scrollBy(0, 200); 
-		} else if( innerWidth < 300 && innerHeight < 500 && scrollY < 300 ){
-			window.scrollBy(0, 300);
-		}
 		return randomElement;
 	}
 </script>
@@ -46,7 +40,7 @@
 <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
 	<div class="pt-8 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
 		<h1 class="mb-4 text-4xl text-left font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl sm:text-center lg:text-6xl dark:text-white"><No size={40} class="mr-2 mb-2 display: inline"/> Gjett Norsk</h1>
-		<p class="mb-8 text-lg font-normal text-center text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends through interactive app, making learning enjoyable and collaborative.</p>
+		<p class="mb-8 text-lg font-normal text-center text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends and make learning enjoyable and collaborative.</p>
 
 		<button onclick={()=>modalStatus =  true} class="block absolute right-2 sm:right-8 top-8 w-md md:w-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
 			How to play
