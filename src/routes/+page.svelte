@@ -1,17 +1,21 @@
 <script>
 	import { No, Modal } from '$lib'
-
-	import awordList from '$lib/awords.json';
-	import bwordList from '$lib/bwords.json';
-
+  import useFetchUsers, { fetchWord } from './fetchWord.svelte.js'
+	// import awordList from '$lib/awords.json';
+	// import bwordList from '$lib/bwords.json';
+	// import words from '$lib/words.json'
+  let response = useFetchUsers();
+  let word = fetchWord();
+	console.log('word: ', word)
 	let modalStatus = $state(false)
 
-	const awords = awordList.awords
-	const bwords = bwordList.bwords
+	// const awords = awordList.awords
+	// const awords = words.awords
+	// const bwords = bwordList.bwords
+	// const bwords = words.bwords
 	let randomElement = $state()
 	let currentLevel = $state('A')
 	let startButton = $derived(randomElement ? 'Next' : 'Start')
-
 
 	function openTab(word, website) {
 		let baseUrl = '';
@@ -31,11 +35,16 @@
 	}
 
 	function randomword (){
-		let selectedList = currentLevel === 'A' ? awords : bwords;
-		randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
-		return randomElement;
+		response = useFetchUsers();
+		// response = fetchWord();
+		// console.log('word: ', word);
+		// let selectedList = currentLevel === 'A' ? awords : bwords;
+		// randomElement = selectedList[Math.floor(Math.random() * selectedList.length)];
+		// return randomElement;
+		// return response
 	}
 </script>
+
 
 <section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
 	<div class="pt-8 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
@@ -51,7 +60,7 @@
 				Change level: {currentLevel}
 			</button>
 
-			<button on:click={randomword} class="inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+			<button  class="inline-flex justify-center items-center py-3 px-5 text-xl font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
 				{startButton}
 			</button>
 		</div>
@@ -98,3 +107,21 @@
 
 <Modal bind:modalStatus />
 
+
+{#if response.isLoading}
+  <p>Fetching users...</p>
+{:else if response.error}
+  <p>An error occurred while fetching users</p>
+{:else if response.users}
+  <ul>
+    {#each response.users as user}
+      <li >
+        <img class='z-20' src={user.picture.thumbnail} alt="user" />
+        <p class='z-20'>
+          {user.name.first}
+          {user.name.last}
+        </p>
+      </li>
+    {/each}
+  </ul>
+{/if}
