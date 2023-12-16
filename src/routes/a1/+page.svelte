@@ -1,18 +1,17 @@
 <script>
-	import {awords} from '$lib/awords.json';
+	import {a1words} from '$lib/a1words.json';
 	import { randomword, openTab } from '$lib/utils.js';
 
-	const wordList = awords
+	const wordList = a1words
 	let randomElement = $state()
 	let startButton = $derived(randomElement ? 'Next' : 'Start')
 
 	function handleClick() {
 		randomElement = randomword(wordList);
-		console.log(randomElement)
 	}
 </script>
 
-		<h1 class="mb-4 text-3xl text-left font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl sm:text-center lg:text-5xl dark:text-white">Nivå A1/A2</h1>
+		<h1 class="mb-4 text-3xl text-left font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl sm:text-center lg:text-5xl dark:text-white">Nivå A1</h1>
 		<p class="mb-8 text-lg font-normal text-center text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Learn Norwegian together with friends and make learning enjoyable and collaborative.</p>
 
 		<div class="flex flex-col m-4 lg:mb-8 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
