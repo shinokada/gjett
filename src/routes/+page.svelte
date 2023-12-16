@@ -59,7 +59,7 @@
 		<p class="block py-12 text-4xl max-w-lg mx-auto text-green-500 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 			{randomElement}
 		</p>
-		<h2 class="text-2xl text-left my-4 font-bold dark:text-white">Need help?</h2>
+		<h2 class="text-2xl text-center sm:text-left m-4 font-bold dark:text-white">Need help?</h2>
 		<div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
 			<div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
 			<p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Open Ordbøkene: {randomElement}</button>
