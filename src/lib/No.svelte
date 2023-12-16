@@ -1,7 +1,17 @@
-<script>
+<script lang="ts">
+  interface CtxType {
+    size: string;
+    role?: string;
+  }
+  interface Props {
+    size?: string;
+    role?: string;
+    ariaLabel?: string;
+  }
+
   import { getContext } from 'svelte';
-  const ctx = getContext('iconCtx') ?? {};
-  let {size = ctx.size || 24, role = ctx.role || 'img', ariaLabel = 'flag of no', ...attributes} = $props();
+  const ctx: CtxType = getContext('iconCtx') ?? {};
+  let {size = ctx.size || "24", role = ctx.role || 'img', ariaLabel = 'flag of no', ...attributes}: Props = $props();
 </script>
 
 <svg
@@ -12,15 +22,6 @@
   {...attributes}
   {role}
   aria-label={ariaLabel}
-  {onclick}
-  {onkeydown}
-  {onkeyup}
-  {onfocus}
-  {onblur}
-  {onmouseenter}
-  {onmouseleave}
-  {onmouseover}
-  {onmouseout}
   viewBox="0 0 640 480"
 >
   <path fill="#ed2939" d="M0 0h640v480H0z" />
