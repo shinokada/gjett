@@ -1,5 +1,9 @@
 <script>
   import No from './No.svelte'
+  import { page } from '$app/stores';
+  
+  let activeUrl = $state($page.url.pathname);
+  console.log(activeUrl)
   let navStatus  = $state(false)
   let navClass = $derived(
     navStatus ? 'block':'hidden'
@@ -14,6 +18,7 @@
   const closeNav = ()=>{
     navStatus = false
   }
+
 </script>
 
 <nav class="bg-transparent border-gray-200 dark:bg-gray-900">

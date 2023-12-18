@@ -1,7 +1,10 @@
 <script>
 	import {bwords} from '$lib/bwords.json';
 	import { randomword, openTab } from '$lib/utils.js';
-
+  import { page } from '$app/stores';
+  
+  let activeUrl = $state($page.url.pathname)
+  console.log(activeUrl);
 	const wordList = bwords
 	let randomElement = $state()
 	let startButton = $derived(randomElement ? 'Next' : 'Start')

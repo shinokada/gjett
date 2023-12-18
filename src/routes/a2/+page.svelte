@@ -1,7 +1,10 @@
 <script>
 	import {a2words} from '$lib/a2words.json';
 	import { randomword, openTab } from '$lib/utils.js';
-
+  import { page } from '$app/stores';
+  
+  let activeUrl = $state($page.url.pathname)
+  console.log(activeUrl);
 	const wordList = a2words
 	let randomElement = $state()
 	let startButton = $derived(randomElement ? 'Next' : 'Start')
