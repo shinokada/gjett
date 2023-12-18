@@ -15,3 +15,16 @@ export function openTab(word, website) {
   const url = baseUrl + encodeURIComponent(word);
   window.open(url, '_blank');
 }
+
+export function cleanWord(word) {
+  // Remove characters after '/'
+  let withoutSlash = word.replace(/\/.*$/, '');
+
+  // Remove characters after ','
+  let withoutComma = withoutSlash.replace(/,.*/, '');
+
+  // Remove characters after ' -'
+  let withoutHyphen = withoutComma.replace(/ -.*/, '');
+
+  return withoutHyphen.trim(); // Trim to remove leading/trailing spaces
+}

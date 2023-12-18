@@ -8,7 +8,6 @@
 
 	function handleClick() {
 		randomElement = randomword(wordList);
-		console.log(randomElement)
 	}
 </script>
 
