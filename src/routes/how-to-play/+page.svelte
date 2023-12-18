@@ -1,3 +1,5 @@
+<h1 class="mb-4 text-3xl text-left font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl sm:text-center lg:text-5xl dark:text-white">How to play</h1>
+
 <ul class="text-left space-y-1 m-4 text-gray-500 list-inside dark:text-gray-400">
   <li class="flex items-center">
     <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
