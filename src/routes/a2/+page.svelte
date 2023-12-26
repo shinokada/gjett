@@ -23,7 +23,7 @@
 			</button>
 		</div>
 		{#if randomElement}
-		<p class="block py-12 text-4xl max-w-lg mx-auto text-green-500 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+		<p class="w-full md:w-2/3 h-64 flex justify-center items-center text-4xl mx-auto text-white bg-custom-red border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 			{randomElement}
 		</p>
 
