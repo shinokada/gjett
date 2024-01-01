@@ -1,7 +1,8 @@
+import randomInteger from 'random-int';
 
-
-export function randomword (wordList){
-  return wordList[Math.floor(Math.random() * wordList.length)];
+export function randomword (wordList) {
+  const randomIndex = randomInteger(0, wordList.length - 1);
+  return wordList[randomIndex];
 }
 
 export function openTab(word, website) {
