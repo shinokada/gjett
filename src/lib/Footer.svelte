@@ -20,7 +20,7 @@
             <a href="https://flexilexi.vercel.app/" target="_blank" class="text-md hover:underline me-4 md:me-6">FlexiLexi</a>
           </li>
           <li>
-            <a href="https://gjett-norsk.vercel.app/" target="_blank" class="text-md hover:underline me-4 md:me-6">Gjett norsk</a>
+            <a href="/" target="_blank" class="text-md hover:underline me-4 md:me-6">Gjett norsk</a>
           </li>
         </ul>
     </div>
