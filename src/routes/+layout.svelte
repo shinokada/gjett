@@ -11,8 +11,4 @@
   </div>
 </section>
 
-<<<<<<< HEAD
-<Footer siteName="LexiLearn Hub"/>
-=======
 <Footer title="LexiLearn Hub"/>
->>>>>>> 5d42c2b (fix: Footer update)
