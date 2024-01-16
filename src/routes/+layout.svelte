@@ -7,7 +7,7 @@
 
 <Nav />
 
-<section class="bg-white dark:bg-slate-950 pb-16 border-b border-gray-200 dark:border-gray-800">
+<section class="bg-white dark:bg-slate-950 pb-10 border-b border-gray-200 dark:border-gray-800">
   <div class="pt-8 px-4 mx-auto max-w-screen-xl text-center">
     {@render children()}
   </div>
