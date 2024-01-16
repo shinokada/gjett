@@ -1,6 +1,6 @@
-<h1 class="text-left text-3xl m-4">Credits</h1>
+<h1 class="text-left text-3xl m-4 dark:text-white">Credits</h1>
 
-<ul class="text-left m-4 p-4 text-lg list-disc">
+<ul class="text-left m-4 p-4 text-lg list-disc dark:text-gray-400">
   <li class="hover:text-red-700 hover:underline">
     <a href="https://svelte-5-preview.vercel.app/docs/introduction" target="_blank" class="hover:underline me-4 md:me-6">Svelte 5</a>
   </li>
