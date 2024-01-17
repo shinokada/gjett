@@ -49,6 +49,6 @@
 </div>
 {:else}
 <p class="w-full md:w-2/3 h-80 flex justify-center items-center text-4xl mx-auto text-white bg-custom-blue dark:bg-custom-blue border border-gray-200 rounded-lg shadow dark:border-gray-700 px-16">
-Forklar ordet uten å bruke ordet selv på norsk.
+Forklar ordet på norsk uten å bruke selve ordet.
 </p>
 {/if}
