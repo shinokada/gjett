@@ -1,6 +1,6 @@
 <script>
   import emojis from "emojibase-data/nb/data.json";
-  import { getRandomEmoji, cleanWord } from '$lib/utils.js';
+  import { getRandomEmoji, cleanWord, openTab } from '$lib/utils.js';
 
   let randomElement = $state()
   let dictWord = $state()
@@ -39,11 +39,11 @@
 <h2 class="text-2xl text-center sm:text-left m-4 font-bold dark:text-white">Need help?</h2>
 <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
   <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-  <p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'ordbokene')}>Open Ordbøkene: {dictWord}</button>
+  <p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement.label, 'ordbokene')}>Open Ordbøkene: {dictWord}</button>
   </p>
   </div>
   <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-  <p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement, 'google')}>Open Google translation: {dictWord}</button>
+  <p class="m-4 text-xl text-purple-500 hover:underline cursor-pointer"><button  on:click={() => openTab(randomElement.label, 'google')}>Open Google translation: {dictWord}</button>
   </p>
   </div>
 </div>
