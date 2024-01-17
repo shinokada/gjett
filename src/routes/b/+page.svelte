@@ -21,7 +21,7 @@
 			</button>
 		</div>
 		{#if randomElement}
-		<p class="w-full md:w-2/3 h-64 flex justify-center items-center text-4xl mx-auto text-white bg-custom-blue dark:bg-custom-blue border border-gray-200 rounded-lg shadow dark:border-gray-700">
+		<p class="w-full md:w-2/3 h-80 flex justify-center items-center text-4xl mx-auto text-white bg-custom-red dark:bg-custom-red border border-gray-200 rounded-lg shadow dark:border-gray-700">
 			{randomElement}
 		</p>
 
@@ -36,4 +36,8 @@
 			</p>
 			</div>
 		</div>
+		{:else}
+<p class="w-full md:w-2/3 h-80 flex justify-center items-center text-4xl mx-auto text-white bg-custom-blue dark:bg-custom-blue border border-gray-200 rounded-lg shadow dark:border-gray-700 px-16">
+Forklar ordet uten å bruke ordet selv på norsk.
+</p>
 		{/if}

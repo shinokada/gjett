@@ -32,6 +32,7 @@
 		<NavLi href="/a1" {closeNav}>Nivå A1</NavLi>
 		<NavLi href="/a2" {closeNav}>Nivå A2</NavLi>
 		<NavLi href="/b" {closeNav}>Nivå B1/B2</NavLi>
+		<NavLi href="/picture" {closeNav}>Picture</NavLi>
 		<NavLi href="/how-to-play" {closeNav}>How to play</NavLi>
 		<NavLi href="/credits" {closeNav}>Credits</NavLi>
 	</NavUl>

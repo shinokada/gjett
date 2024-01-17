@@ -29,3 +29,13 @@ export function cleanWord(word) {
 
   return withoutHyphen.trim(); // Trim to remove leading/trailing spaces
 }
+
+export function getRandomEmoji(selectedEmojis) {
+  if (selectedEmojis.length === 0) {
+      // Handle the case where there are no selected emojis
+      return null;
+  }
+
+  const randomIndex = Math.floor(Math.random() * selectedEmojis.length);
+  return selectedEmojis[randomIndex];
+}
