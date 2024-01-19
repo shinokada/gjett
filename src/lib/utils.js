@@ -1,5 +1,25 @@
 import randomInteger from 'random-int';
 
+const randomNumberGenerator = (min, max, maxConsecutiveRepeats) => {
+	let previousNumbers = [];
+
+	return () => {
+		let randomNumber;
+
+		do {
+			randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+		} while (previousNumbers.includes(randomNumber));
+
+		if (previousNumbers.length >= maxConsecutiveRepeats) {
+			previousNumbers.shift();
+		}
+
+		previousNumbers.push(randomNumber);
+
+		return randomNumber;
+	};
+};
+
 export function randomword (wordList) {
   const randomIndex = randomInteger(0, wordList.length - 1);
   return wordList[randomIndex];
