@@ -1,5 +1,3 @@
-import randomInteger from 'random-int';
-
 const randomNumberGenerator = (min, max, maxConsecutiveRepeats) => {
 	let previousNumbers = [];
 
@@ -20,8 +18,10 @@ const randomNumberGenerator = (min, max, maxConsecutiveRepeats) => {
 	};
 };
 
-export function randomword (wordList) {
-  const randomIndex = randomInteger(0, wordList.length - 1);
+export function randomword (wordList, maxConsecutiveRepeats = 50) {
+  const randomIndexFn = randomNumberGenerator(0, wordList.length - 1, maxConsecutiveRepeats);
+
+	const randomIndex = randomIndexFn();
   return wordList[randomIndex];
 }
 
