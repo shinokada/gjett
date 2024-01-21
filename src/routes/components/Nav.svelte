@@ -13,21 +13,28 @@
 		// without using effect
 		navStatus = nav.isOpen;
 	});
+
+	let divClass = "ml-auto w-full"
+    let ulClass =
+    'flex flex-col py-3 lg:flex-row lg:my-0 text-sm order-1 font-medium gap-4 lg:gap-2 dark:lg:bg-transparent lg:bg-white border-0';
+    let navClass = 'w-full divide-gray-200 border-gray-200 bg-white px-2 py-2.5 text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-slate-950 dark:text-gray-400 sm:px-4'
+
 </script>
 
-<header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-slate-950">
-
-<Navbar {toggleNav} {closeNav} {navStatus} fluid breakPoint="lg">
+<header
+    class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-sky-950"
+  >
+  <Navbar {navClass} {toggleNav} {closeNav} {navStatus} breakPoint="lg" fluid divChildrenClass={divClass}>
 	{#snippet brand()}
 		<NavBrand siteName="Gjett Norsk" {closeNav}>
 			<No size={30} class="display: inline"/> 
 		</NavBrand>
-		<div class="flex items-center ms-auto">
-			<Darkmode />
-		</div>
+		<div class="flex items-center ml-auto lg:order-1">
+            <Darkmode class="inline-block dark:hover:text-white hover:text-gray-900" />
+        </div>
 	{/snippet}
 
-	<NavUl>
+	<NavUl {ulClass}>
 		<NavLi href="/" {closeNav}>Nivå A1/A2</NavLi>
 		<NavLi href="/a1" {closeNav}>Nivå A1</NavLi>
 		<NavLi href="/a2" {closeNav}>Nivå A2</NavLi>
