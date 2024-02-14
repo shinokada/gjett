@@ -40,7 +40,6 @@
 		<NavLi href="/a2" {closeNav}>Nivå A2</NavLi>
 		<NavLi href="/b" {closeNav}>Nivå B1/B2</NavLi>
 		<NavLi href="/picture" {closeNav}>Picture</NavLi>
-		<NavLi href="/how-to-play" {closeNav}>How to play</NavLi>
 		<NavLi href="/about" {closeNav}>About</NavLi>
 	</NavUl>
 </Navbar>
