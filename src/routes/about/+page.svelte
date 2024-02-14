@@ -39,9 +39,16 @@
     <a href="https://kit.svelte.dev/docs/introduction" class="hover:underline me-4 md:me-6">SvelteKit: { svelteKitVersion }</a>
   </li>
   <li class="hover:text-red-700 hover:underline">
-    <a href="https://github.com/shinokada/gjett-norsk" class="hover:underline me-4 md:me-6">Github repo</a>
-  </li>
-  <li class="hover:text-red-700 hover:underline">
     <a href="https://vitejs.dev/" class="hover:underline">Vite: { viteVersion }</a>
   </li>
+</ul>
+
+<h2 class="text-left text-2xl m-4 font-bold dark:text-white">Repo</h2>
+<ul class="text-left m-4 p-4 text-lg list-disc dark:text-gray-400">
+<li class="hover:text-red-700 hover:underline">
+  <a href="https://github.com/shinokada/gjett-norsk" class="hover:underline me-4 md:me-6">Github repo</a>
+</li>
+<li class="hover:text-red-700 hover:underline">
+  <a href="https://github.com/shinokada" class="hover:underline me-4 md:me-6">Author: Shin</a>
+</li>
 </ul>
