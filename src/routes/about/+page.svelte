@@ -15,7 +15,7 @@
     Gjett Norsk is for Norwegian learners who want to learn Norwegian vocabulary in a group.
   </p>
 
-  <h2 class="text-left text-2xl m-4 font-bold dark:text-white">How to play</h2>
+  <h2>How to play</h2>
 
 <ul class="text-left space-y-1 m-4 text-gray-500 list-inside dark:text-gray-400">
   <li class="flex items-center">
@@ -93,7 +93,7 @@
       </li>
     </ul>
   
-    <h2 class="m-4 text-left text-2xl font-bold dark:text-white">Repo</h2>
+    <h2>Repo</h2>
     <ul class="m-4 list-disc p-4 text-left text-lg dark:text-gray-400">
       <li class="hover:text-red-700 hover:underline">
         <a
