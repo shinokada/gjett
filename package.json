@@ -2,7 +2,7 @@
 	"name": "gjett",
 	"version": "1.0.2",
 	"description": "Gjett norsk for learning Norwegian with your friend.",
-	"homepage": "https://gjett-norsk.vercel.app/",
+	"homepage": "https://gjett-norsk.codewithshin.com/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/shinokada/gjett"
