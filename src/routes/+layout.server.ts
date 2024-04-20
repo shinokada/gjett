@@ -1,11 +1,14 @@
 import { ANALYTICS_ID } from '$env/static/private';
 import type { MetaProps } from 'runes-meta-tags';
-import { splitAndCapitalize, removeHyphensAndCapitalize } from './utils/helpers';
+import { metaTitle, metaDescription, metaImg } from 'runes-meta-tags';
+  
 export const load = ({ url }) => {
-  const title = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} - ${removeHyphensAndCapitalize(__NAME__)}` : `${removeHyphensAndCapitalize(__NAME__)}`;
-  const description = splitAndCapitalize(url.pathname) ? `${splitAndCapitalize(url.pathname)} - Gjett Norsk for learning Norwegian with your friend. ` : 'Gjett Norsk for learning Norwegian with your friend.';
-  const image = splitAndCapitalize(url.pathname) ? `https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title=${splitAndCapitalize(url.pathname)}` : 'https://open-graph-vercel.vercel.app/api/gjett-norsk';
-  // console.log('url: ', splitAndCapitalize(url.pathname));
+  
+  const title = metaTitle(url.pathname, __NAME__);
+  const basicDesc = 'Gjett Norsk for learning Norwegian with your friend.';
+  const description = metaDescription(url.pathname, basicDesc);
+  const image = metaImg(url.pathname, __NAME__);
+    
   const layoutMetaTags: MetaProps = {
     title,
     description,
