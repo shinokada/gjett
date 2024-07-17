@@ -1,6 +1,6 @@
 <script>
   import emojis from "emojibase-data/nb/data.json";
-  import { getRandomEmoji, cleanWord, openTab } from '$lib/utils.js';
+  import { getRandomEmoji, cleanWord, openTab } from '$lib/utils';
 
   let randomElement = $state()
   let dictWord = $state()

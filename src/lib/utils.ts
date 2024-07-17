@@ -1,4 +1,4 @@
-export function removeHyphensAndCapitalize(str) {
+export function removeHyphensAndCapitalize(str: string) {
   // Handle empty string or strings without '-'
   if (!str || !str.includes('-')) {
     return str;
@@ -11,34 +11,35 @@ export function removeHyphensAndCapitalize(str) {
   return capitalized.replace(/-|\s{2,}/g, ' ');
 }
 
-const randomNumberGenerator = (min, max, maxConsecutiveRepeats) => {
-	let previousNumbers = [];
+const randomNumberGenerator = (min: number, max: number, maxConsecutiveRepeats: number): () => number => {
+  let previousNumbers: number[] = [];
 
-	return () => {
-		let randomNumber;
+  return (): number => {
+      let randomNumber: number;
 
-		do {
-			randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-		} while (previousNumbers.includes(randomNumber));
+      do {
+          randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      } while (previousNumbers.includes(randomNumber));
 
-		if (previousNumbers.length >= maxConsecutiveRepeats) {
-			previousNumbers.shift();
-		}
+      if (previousNumbers.length >= maxConsecutiveRepeats) {
+          previousNumbers.shift();
+      }
 
-		previousNumbers.push(randomNumber);
+      previousNumbers.push(randomNumber);
 
-		return randomNumber;
-	};
+      return randomNumber;
+  };
 };
 
-export function randomword (wordList, maxConsecutiveRepeats = 50) {
+  export function randomword(wordList: string[], maxConsecutiveRepeats: number = 50): string {
+
   const randomIndexFn = randomNumberGenerator(0, wordList.length - 1, maxConsecutiveRepeats);
 
 	const randomIndex = randomIndexFn();
   return wordList[randomIndex];
 }
 
-export function openTab(word, website) {
+export function openTab(word: string, website: string) {
   let baseUrl = '';
   if( website === 'google'){
     baseUrl = 'https://translate.google.com/?hl=en&tab=TT&sl=no&tl=en&op=translate&text='
@@ -50,7 +51,7 @@ export function openTab(word, website) {
   window.open(url, '_blank');
 }
 
-export function cleanWord(word) {
+export function cleanWord(word: string) {
   // Remove characters after '/'
   let withoutSlash = word.replace(/\/.*$/, '');
 
@@ -63,10 +64,16 @@ export function cleanWord(word) {
   return withoutHyphen.trim(); // Trim to remove leading/trailing spaces
 }
 
-export function getRandomEmoji(selectedEmojis) {
+interface Emoji {
+  label: string;
+  emoji: string;
+  // Add other properties that your Emoji object has
+}
+
+export function getRandomEmoji(selectedEmojis: Emoji[]): Emoji | null {
   if (selectedEmojis.length === 0) {
-      // Handle the case where there are no selected emojis
-      return null;
+    // Handle the case where there are no selected emojis
+    return null;
   }
 
   const randomIndex = Math.floor(Math.random() * selectedEmojis.length);

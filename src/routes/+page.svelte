@@ -1,6 +1,6 @@
 <script>
 	import {awords} from '$lib/awords.json';
-	import { randomword, openTab } from '$lib/utils.js';
+	import { randomword, openTab } from '$lib/utils';
 
 	const wordList = awords
 	let randomElement = $state()

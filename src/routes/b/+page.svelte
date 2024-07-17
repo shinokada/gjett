@@ -1,6 +1,6 @@
 <script>
 	import {bwords} from '$lib/bwords.json';
-	import { randomword, openTab } from '$lib/utils.js';
+	import { randomword, openTab } from '$lib/utils';
 
 	const wordList = bwords
 	let randomElement = $state()
