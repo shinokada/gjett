@@ -34,7 +34,7 @@
           <h3 class={h3Class}>
             How to play
           </h3>
-          <button type="button" class={buttonClass} onclick={close}>
+          <button type="button" class={buttonClass} onclick={close} aria-label="Close modal">
             <svg
               class="w-5 h-5"
               fill="currentColor"
