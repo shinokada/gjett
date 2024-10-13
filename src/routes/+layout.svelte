@@ -1,35 +1,37 @@
 <script>
-  import "../app.pcss";
-  import { Runatics } from 'runatics';
-  import Nav from "./components/Nav.svelte";
-  import Footer from './components/Footer.svelte'
-  import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
-  import { page } from '$app/stores';
+import '../app.pcss';
+import { Runatics } from 'runatics';
+import Nav from './components/Nav.svelte';
+import Footer from './components/Footer.svelte';
+import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
+import { page } from '$app/stores';
 
-  let { children, data } = $props();
+let { children, data } = $props();
 
-  let metaTags = $state(
-    $page.data.pageMetaTags
-      ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
-      : data.layoutMetaTags
-  );
+let metaTags = $state(
+	$page.data.pageMetaTags
+		? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
+		: data.layoutMetaTags
+);
 
-  $effect(() => {
-    metaTags = $page.data.pageMetaTags ? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags ) : data.layoutMetaTags
-  });
+$effect(() => {
+	metaTags = $page.data.pageMetaTags
+		? deepMerge($page.data.layoutMetaTags, $page.data.pageMetaTags)
+		: data.layoutMetaTags;
+});
 
-  const analyticsId = data.ANALYTICS_ID_LANGUAGE_APP
+const analyticsId = data.ANALYTICS_ID_LANGUAGE_APP;
 </script>
 
-<Runatics {analyticsId} />
-<RunesMetaTags {...metaTags}/>
+<Runatics analyticsId={analyticsId} />
+<RunesMetaTags {...metaTags} />
 
 <Nav />
 
-<section class="bg-white dark:bg-slate-950 pb-16 border-b border-gray-200 dark:border-gray-800">
-  <div class="pt-8 px-4 mx-auto max-w-screen-xl text-center">
-    {@render children()}
-  </div>
+<section class="border-b border-gray-200 bg-white pb-16 dark:border-gray-800 dark:bg-slate-950">
+	<div class="mx-auto max-w-screen-xl px-4 pt-8 text-center">
+		{@render children()}
+	</div>
 </section>
 
 <Footer />
