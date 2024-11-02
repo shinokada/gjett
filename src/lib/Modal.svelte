@@ -7,13 +7,6 @@ let headDivClass = 'flex justify-between items-center p-5 rounded-t border-b dar
 let h3Class = 'text-xl font-medium text-blue-900 dark:text-white';
 let buttonClass =
 	'text-blue-400 bg-transparent hover:bg-blue-200 hover:text-blue-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-blue-600 dark:hover:text-white';
-let pClass = 'text-base leading-relaxed text-blue-500 dark:text-blue-400';
-let footerClass =
-	'flex items-center p-6 space-x-2 rounded-b border-t border-blue-200 dark:border-blue-600';
-let btn2Class =
-	'text-blue-500 bg-white hover:bg-blue-100 focus:ring-4 focus:ring-blue-300 rounded-lg border border-blue-200 text-sm font-medium px-5 py-2.5 hover:text-blue-900 focus:z-10 dark:bg-blue-700 dark:text-blue-300 dark:border-blue-500 dark:hover:text-white dark:hover:bg-blue-600';
-let button1Class =
-	'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800';
 </script>
 
 {#if modalStatus}

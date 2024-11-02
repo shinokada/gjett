@@ -17,8 +17,6 @@ const selectedEmojis = emojis.filter((emoji) => {
 	);
 });
 
-const randomEmoji = getRandomEmoji(selectedEmojis);
-
 function handleClick() {
 	randomElement = getRandomEmoji(selectedEmojis);
 	dictWord = cleanWord(randomElement.label);
