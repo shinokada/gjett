@@ -1,5 +1,5 @@
 <script>
-import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode } from 'svelte-5-ui-lib';
+import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode } from 'flowbite-svelte';
 import No from '$lib/No.svelte';
 import { page } from '$app/stores';
 
@@ -48,7 +48,7 @@ let navClass =
 			</div>
 		{/snippet}
 
-		<NavUl {activeUrl} class={ulclass}>
+		<NavUl activeUrl={activeUrl} class={ulclass}>
 			<NavLi href="/" closeNav={closeNav}>Nivå A1/A2</NavLi>
 			<NavLi href="/a1" closeNav={closeNav}>Nivå A1</NavLi>
 			<NavLi href="/a2" closeNav={closeNav}>Nivå A2</NavLi>
