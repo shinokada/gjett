@@ -18,8 +18,8 @@
   --color-primary-800: #3730a3;
   --color-primary-900: #312e81;
 
-  --custom-red: #BA0C2F;
-  --custom-blue: #00205B;
+  --color-custom-red: #BA0C2F;
+  --color-custom-blue: #00205B;
 }
 
 @layer base {
