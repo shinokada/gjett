@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gjett-norsk.codewithshin.com/sitemap.xml
