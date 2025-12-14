@@ -1,7 +1,8 @@
 import tailwindcss from '@tailwindcss/vite';
 import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
+import devtoolsJson from 'vite-plugin-devtools-json';
 import pkg from './package.json' with { type: 'json' };
 import Svelte5UiLibPackage from './node_modules/svelte-5-ui-lib/package.json' with { type: 'json' };
 import sveltePackage from './node_modules/svelte/package.json' with { type: 'json' };
@@ -9,7 +10,7 @@ import svelteKitPackage from './node_modules/@sveltejs/kit/package.json' with { 
 import vitePackage from './node_modules/vite/package.json' with { type: 'json' };
 
 export default defineConfig({
-	plugins: [sveltekit(), tailwindcss()],
+	plugins: [sveltekit(), tailwindcss(), devtoolsJson()],
 	define: {
 		__NAME__: JSON.stringify(pkg.name),
 		__DESCRIPTION__: JSON.stringify(pkg.description),
@@ -18,10 +19,10 @@ export default defineConfig({
 		__SVELTE_VERSION__: JSON.stringify(sveltePackage.version),
 		__SVELTEKIT_VERSION__: JSON.stringify(svelteKitPackage.version),
 		__VITE_VERSION__: JSON.stringify(vitePackage.version),
-    __SVELTE_5_UI_LIB_VERSION__: JSON.stringify(Svelte5UiLibPackage.version),
+		__SVELTE_5_UI_LIB_VERSION__: JSON.stringify(Svelte5UiLibPackage.version)
 	},
 	test: {
-		workspace: [
+		projects: [
 			{
 				extends: './vite.config.ts',
 				plugins: [svelteTesting()],

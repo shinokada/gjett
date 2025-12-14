@@ -2,24 +2,24 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@source "../node_modules/svelte-5-ui-lib/dist";
+@source '../node_modules/svelte-5-ui-lib/dist';
 
 @theme {
-  --z-index-100: 100;
+	--z-index-100: 100;
 
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
+	--color-primary-50: #eef2ff;
+	--color-primary-100: #e0e7ff;
+	--color-primary-200: #c7d2fe;
+	--color-primary-300: #a5b4fc;
+	--color-primary-400: #818cf8;
+	--color-primary-500: #6366f1;
+	--color-primary-600: #4f46e5;
+	--color-primary-700: #4338ca;
+	--color-primary-800: #3730a3;
+	--color-primary-900: #312e81;
 
-  --color-custom-red: #BA0C2F;
-  --color-custom-blue: #00205B;
+	--color-custom-red: #ba0c2f;
+	--color-custom-blue: #00205b;
 }
 
 @layer base {

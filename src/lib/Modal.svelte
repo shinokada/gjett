@@ -1,12 +1,13 @@
 <script>
-let { modalStatus } = $props();
-const close = () => (modalStatus = false);
+	let { modalStatus } = $props();
+	const close = () => (modalStatus = false);
 
-let divClass = 'relative bg-white rounded-lg shadow dark:bg-blue-700';
-let headDivClass = 'flex justify-between items-center p-5 rounded-t border-b dark:border-blue-600';
-let h3Class = 'text-xl font-medium text-blue-900 dark:text-white';
-let buttonClass =
-	'text-blue-400 bg-transparent hover:bg-blue-200 hover:text-blue-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-blue-600 dark:hover:text-white';
+	let divClass = 'relative bg-white rounded-lg shadow dark:bg-blue-700';
+	let headDivClass =
+		'flex justify-between items-center p-5 rounded-t border-b dark:border-blue-600';
+	let h3Class = 'text-xl font-medium text-blue-900 dark:text-white';
+	let buttonClass =
+		'text-blue-400 bg-transparent hover:bg-blue-200 hover:text-blue-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-blue-600 dark:hover:text-white';
 </script>
 
 {#if modalStatus}
@@ -15,7 +16,7 @@ let buttonClass =
 		id="how-to-play"
 		role="dialog"
 		aria-modal="true"
-		class="fixed left-0 right-0 top-20 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden"
+		class="fixed top-20 right-0 left-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
 	>
 		<div class="relative h-full w-full max-w-md px-4 md:h-auto">
 			<!-- Modal content -->

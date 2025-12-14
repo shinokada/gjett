@@ -1,31 +1,31 @@
 <script>
-import { a1words } from '$lib/a1words.json';
-import { randomword, openTab, cleanWord } from '$lib/utils';
+	import { a1words } from '$lib/a1words.json';
+	import { randomword, openTab, cleanWord } from '$lib/utils';
 
-const wordList = a1words;
-let randomElement = $state();
-let dictWord = $state();
-let startButton = $derived(randomElement ? 'Next' : 'Start');
+	const wordList = a1words;
+	let randomElement = $state();
+	let dictWord = $state();
+	let startButton = $derived(randomElement ? 'Next' : 'Start');
 
-function handleClick() {
-	randomElement = randomword(wordList);
-	dictWord = cleanWord(randomElement);
-}
+	function handleClick() {
+		randomElement = randomword(wordList);
+		dictWord = cleanWord(randomElement);
+	}
 </script>
 
 <h1
-	class="mb-4 text-left text-3xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white sm:text-center md:text-4xl lg:text-5xl"
+	class="mb-4 text-left text-3xl leading-none font-extrabold tracking-tight text-gray-900 sm:text-center md:text-4xl lg:text-5xl dark:text-white"
 >
 	Nivå A1
 </h1>
 <p
-	class="mb-8 text-center text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48"
+	class="mb-8 text-center text-lg font-normal text-gray-500 sm:px-16 lg:text-xl xl:px-48 dark:text-gray-400"
 >
 	Learn Norwegian together with friends and make learning enjoyable and collaborative.
 </p>
 
 <div
-	class="m-4 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0 lg:mb-8"
+	class="m-4 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:mb-8"
 >
 	<button
 		onclick={handleClick}
@@ -36,15 +36,15 @@ function handleClick() {
 </div>
 {#if randomElement}
 	<p
-		class="mx-auto flex h-80 w-full items-center justify-center rounded-lg border border-gray-200 bg-custom-red text-4xl text-white shadow dark:border-gray-700 dark:bg-custom-red md:w-2/3"
+		class="bg-custom-red dark:bg-custom-red mx-auto flex h-80 w-full items-center justify-center rounded-lg border border-gray-200 text-4xl text-white shadow md:w-2/3 dark:border-gray-700"
 	>
 		{randomElement}
 	</p>
 
-	<h2 class="m-4 text-center text-2xl font-bold dark:text-white sm:text-left">Need help?</h2>
+	<h2 class="m-4 text-center text-2xl font-bold sm:text-left dark:text-white">Need help?</h2>
 	<div class="mb-6 grid gap-8 md:grid-cols-2 lg:mb-16">
 		<div
-			class="items-center rounded-lg bg-gray-50 shadow dark:border-gray-700 dark:bg-gray-800 sm:flex"
+			class="items-center rounded-lg bg-gray-50 shadow sm:flex dark:border-gray-700 dark:bg-gray-800"
 		>
 			<p class="m-4 cursor-pointer text-xl text-purple-500 hover:underline">
 				<button onclick={() => openTab(randomElement, 'ordbokene')}
@@ -53,7 +53,7 @@ function handleClick() {
 			</p>
 		</div>
 		<div
-			class="items-center rounded-lg bg-gray-50 shadow dark:border-gray-700 dark:bg-gray-800 sm:flex"
+			class="items-center rounded-lg bg-gray-50 shadow sm:flex dark:border-gray-700 dark:bg-gray-800"
 		>
 			<p class="m-4 cursor-pointer text-xl text-purple-500 hover:underline">
 				<button onclick={() => openTab(randomElement, 'google')}
@@ -64,7 +64,7 @@ function handleClick() {
 	</div>
 {:else}
 	<p
-		class="mx-auto flex h-80 w-full items-center justify-center rounded-lg border border-gray-200 bg-custom-blue px-16 text-4xl text-white shadow dark:border-gray-700 dark:bg-custom-blue md:w-2/3"
+		class="bg-custom-blue dark:bg-custom-blue mx-auto flex h-80 w-full items-center justify-center rounded-lg border border-gray-200 px-16 text-4xl text-white shadow md:w-2/3 dark:border-gray-700"
 	>
 		Forklar ordet på norsk uten å bruke selve ordet.
 	</p>
